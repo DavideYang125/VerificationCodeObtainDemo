@@ -45,6 +45,7 @@ namespace VerificationCodeObtainDemo.Feifei
                 HttpResponseMessage response = _client.PostAsync(ApiCode, content).Result;
                 string result = response.Content.ReadAsStringAsync().Result;
                 var data = JsonConvert.DeserializeObject<HttpRspData>(result);
+                //反序列化的类型来自官网demo
                 if (!string.IsNullOrEmpty(data.RspData))
                 {
                     // 附带附加信息
